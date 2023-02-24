@@ -2,22 +2,34 @@
 
 ## Description
 `Pixel Fixer 3d` is a shaderless solution for pixelating 3d scenes with pixel creep reduction for orthographic camera.  
-It gives smooth camera panning for non moving objects with optional transform snapping for moving objects.  
+It provides the base for creating Pixel Art style games with 3d models.  
 
-Play the [WebGL demo](https://radivarig.github.io/PixelFixer3d_URP_WebGL). Demo scene is included.  
-Check the [Setup](https://github.com/Radivarig/PixelFixed3d_Docs-And-Issue-Tracker/blob/main/Setup.md) for fine tuning.  
-Get the asset [here](https://assetstore.unity.com/packages/slug/243562).  
+[WebGL Demo](https://radivarig.github.io/PixelFixer3d_URP_WebGL)  
+[Asset Store](https://assetstore.unity.com/packages/slug/243562)  
+[Discord Server](https://discord.com/invite/Y9SFDvf6)  
+[Setup](https://github.com/Radivarig/PixelFixed3d_Docs-And-Issue-Tracker/blob/main/Setup.md)
 
-## Shaderless
-Requires no special shaders so you can keep existing materials.  
-
-## Render pipelines
+Render pipelines
 - Built-in ✓
 - URP ✓
+- HDRP ✗ (on the roadmap)
 
-## Pixel Creep
-Image upscaling makes the pixels stand out but also makes a visual artifact of pixel flickering (pixel creep) more perceivable.  
-For each pixel representing an object there are more parts of that object that ended up between the pixels and not visible, so slight movements of either the camera or transforms (position/rotation/scale) will render different color each frame which makes flickering.  
+## Shaderless
+Requires no special shaders so you can keep your existing materials.
+
+## Pixelization
+Achieved by rendering to a lower resolution render texture and upscaling to fit the screen.
+
+## Pixel Creep reduction
+Camera and tagged objects are snapped to a grid of world space pixel size resulting in the same pixel colors being rendered while moving.
+
+## Stabilization
+Snapping to pixel size grid makes the camera shake so subpixel offset is applied in the game resolution based on the snap position difference.
+
+## UI
+Includes scripts for making canvas elements follow a world transform.
+Includes examples for having a higher resolution text than the pixelized texture.
+Includes an option to fully pixelate a world space canvas (update soon to be published).
 
 ## How the asset works
 1. Camera gets snapped to a grid of size of a pixel in world space which makes pixel colors consistent but shows a zig-zag movement.  
@@ -45,12 +57,9 @@ Finding Snappables is cached and not executed every frame.
 - Resolution must be set and be divisible with pixelMultiplier.  
 
 ## In progress/research
-- [Built-in] Post-processing not applied to targetTexture
 - [HDRP] targetTexture with lower resolution does not render full screen rect
 - [Built-in] WebGL targetTexture goes black on fullscreen
 - Skinned mesh hierarchy snapping after animation
-- Automate setting global mipmaps, filtering etc.
 - Ocassional pixel flicker on alpha clipped textures or geometry edges
-- [URP] requires either depth or opaque textures enabled or it culls the scene
 
 For any questions contact me at reslav.hollos@gmail.com.  
