@@ -6,7 +6,7 @@ It provides the base for creating Pixel Art style games with 3d models.
 
 [WebGL Demo](https://radivarig.github.io/PixelFixer3d_URP_WebGL)  
 [Asset Store](https://assetstore.unity.com/packages/slug/243562)  
-[Discord Server](https://discord.com/invite/Y9SFDvf6)  
+[Discord Server](https://discord.gg/gUEgnTkPF2)  
 [Setup](https://github.com/Radivarig/PixelFixed3d_Docs-And-Issue-Tracker/blob/main/Setup.md)
 
 Render pipelines
