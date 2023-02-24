@@ -4,9 +4,7 @@ Thank you for purchasing PixelFixer3d!
 # Setup
 - Drag the `PixelFixer3d.prefab` into the scene and you should immediatelly see the pixelated effect
 - Set a resolution (ex. 1920x1080) that is a multiple of a chosen `PixelFixer3d.pixelMultiplier` number
-
-# Troubleshoot
-- If the scene looks like missing, enable either depth texture or opaque texture in the pipeline asset
+- [Built-in] Move `PostProcessLayer` and `PostProcessVolume` from MainCamera to the PixelFixer3d gameObject
 
 # Fine tuning
 - Set texture's filtering to Point
@@ -19,7 +17,8 @@ Thank you for purchasing PixelFixer3d!
 # UI
 - To have Canvas elements follow a transform, parent them under that transform and attach `WorldPositionUI.cs`
   - They will automatically be placed under Canvas in Play-Mode
-- Lowering font resolution:
+
+# Legacy text font resolution:
   - Set font rendering mode to `Hinted Raster` and character to `ASCII default set`
   - Click `Tripple dot icon (upper right) > Create Editable Copy`
   - Set copied font's texture filtering to Point and lower the resolution
